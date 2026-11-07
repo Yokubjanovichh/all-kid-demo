@@ -17,8 +17,8 @@
 <link rel="icon" href="/all-kid-demo/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/all-kid-demo/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/all-kid-demo/assets/fonts/jost-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/all-kid-demo/assets/css/style.css?v=2">
-<script defer src="/all-kid-demo/assets/js/main.js?v=1"></script>
+<link rel="stylesheet" href="/all-kid-demo/assets/css/style.css?v=4">
+<script defer src="/all-kid-demo/assets/js/main.js?v=2"></script>
 <script>window.METRIKA_ID = 0; window.ym = function () {};</script>
 <meta name="robots" content="noindex, nofollow">
 <style>.demo-bar{margin:0;padding:.5rem 1rem;background:#17324f;color:#fff;font-size:.875rem;line-height:1.4;text-align:center}.demo-note{margin-top:.75rem;font-size:.875rem;color:#4b5d72}</style>
@@ -29,7 +29,7 @@
 
 <!-- Temporary notice, Oksana asked for it on 2026-11-07. Remove it when the full site is back. -->
 <div class="site-notice" role="note">
-  <p class="wrap">Из-за сбоя у&nbsp;хостинг-провайдера наш сайт временно работает в&nbsp;сокращенном виде. Телефон и&nbsp;почта прежние.</p>
+  <p class="wrap"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg><span>Из-за сбоя у&nbsp;хостинг-провайдера наш сайт временно работает в&nbsp;сокращенном виде. Телефон и&nbsp;почта прежние.</span></p>
 </div>
 
 <header class="site-header">
@@ -335,7 +335,8 @@
             <p class="field-error" id="e-consent" hidden></p>
           </div>
           <p class="form-note">Как мы обрабатываем данные, написано в <a href="/all-kid-demo/privacy.html" target="_blank" rel="noopener">политике конфиденциальности</a>.</p>
-          <button class="btn btn-primary btn-submit" type="submit">Отправить на расчет</button>
+          <button class="btn btn-primary btn-submit" type="submit" aria-describedby="form-hint">Отправить на расчет</button>
+          <p class="form-hint" id="form-hint" aria-live="polite" hidden></p>
           <div class="form-fail" id="form-fail" role="alert" hidden>
             <p id="form-fail-text">Заявка не отправилась.</p>
             <p>Позвоните нам: <a href="tel:+79031855846">+7 903 185-58-46</a></p>

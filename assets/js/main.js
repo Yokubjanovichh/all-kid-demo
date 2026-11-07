@@ -2,9 +2,9 @@
 (function () {
   'use strict';
 
-  // Metrika JS-event goal that the Direct strategy optimizes for (exact identifier from Metrika -> Цели).
-  // Leave empty when the strategy uses an automatic goal (form submission, phone click): those need no code.
-  // TODO: fill in once the strategy goal is known (brief, section 5).
+  // Metrika JS-event goal for a lead (exact identifier from Metrika -> Цели). The Direct strategy uses
+  // «Отправка формы с главной» (form goal), «Телефон» and «WhatsApp» (link clicks): none is a JS event,
+  // so this stays empty (brief, section 5).
   var LEAD_GOAL = '';
 
   var SEND_URL = '/send.php';
@@ -23,6 +23,7 @@
   var done = document.getElementById('form-done');
   var fail = document.getElementById('form-fail');
   var failText = document.getElementById('form-fail-text');
+  var hint = document.getElementById('form-hint');
   var sending = false;
 
   function setService(name) {
@@ -139,18 +140,50 @@
     return !first;
   }
 
+  /* ---------- the submit button works only when the form is filled in ----------
+     Metrika counts the «Отправка формы» goal on every click of the submit button, even when the
+     form is invalid, and the strategy pays for each conversion. A disabled button gets no clicks,
+     so only real leads count. Without JavaScript the button stays active and send.php validates. */
+  function missingText(errors) {
+    var fields = [];
+    if (errors.name) fields.push('имя');
+    if (errors.phone) fields.push(digitsOf(phoneInput.value) ? 'телефон полностью' : 'телефон');
+    var actions = [];
+    if (fields.length) actions.push('укажите ' + fields.join(' и '));
+    if (errors.consent) actions.push('отметьте согласие');
+    if (errors.comment) actions.push('сократите комментарий');
+    return actions.length ? 'Чтобы отправить заявку, ' + actions.join(', ') + '.' : '';
+  }
+
+  function updateReady() {
+    var errors = validate();
+    var ready = !errors.name && !errors.phone && !errors.comment && !errors.consent;
+    if (!sending) submitButton.disabled = !ready;
+    if (hint) {
+      hint.textContent = ready ? '' : missingText(errors);
+      hint.hidden = ready;
+    }
+  }
+
   form.addEventListener('input', function (event) {
     if (event.target.name) setError(event.target.name, '');
+    updateReady();
   });
   form.addEventListener('change', function (event) {
     if (event.target.name === 'consent') setError('consent', '');
+    updateReady();
   });
+  // Values restored by the browser (autofill, back button) arrive without an input event.
+  window.addEventListener('pageshow', updateReady);
+  updateReady();
 
   /* ---------- sending ---------- */
   function setSending(on) {
     sending = on;
-    submitButton.disabled = on;
+    submitButton.classList.toggle('is-sending', on);
     submitButton.textContent = on ? 'Отправляем…' : submitLabel;
+    if (on) submitButton.disabled = true;
+    else updateReady();
   }
 
   function succeed() {
