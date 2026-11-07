@@ -17,7 +17,7 @@
 <link rel="icon" href="/all-kid-demo/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/all-kid-demo/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/all-kid-demo/assets/fonts/jost-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/all-kid-demo/assets/css/style.css?v=1">
+<link rel="stylesheet" href="/all-kid-demo/assets/css/style.css?v=2">
 <script defer src="/all-kid-demo/assets/js/main.js?v=1"></script>
 <script>window.METRIKA_ID = 0; window.ym = function () {};</script>
 <meta name="robots" content="noindex, nofollow">
@@ -26,6 +26,11 @@
 <body>
 <p class="demo-bar" role="note">Демо-версия сайта. Заявки отсюда не отправляются, после запуска на all-kid.ru они будут приходить на почту.</p>
 <a class="skip-link" href="#raschet">Перейти к форме заявки</a>
+
+<!-- Temporary notice, Oksana asked for it on 2026-11-07. Remove it when the full site is back. -->
+<div class="site-notice" role="note">
+  <p class="wrap">Из-за сбоя у&nbsp;хостинг-провайдера наш сайт временно работает в&nbsp;сокращенном виде. Телефон и&nbsp;почта прежние.</p>
+</div>
 
 <header class="site-header">
   <div class="wrap header-row">
@@ -298,8 +303,7 @@
         <h2 id="raschet-title">Рассчитаем стоимость заказа</h2>
         <p>Расскажите, что нужно сшить: модель, ткань, количество и сроки. Мы перезвоним, уточним детали и сориентируем по стоимости.</p>
         <p class="order-call">Удобнее по телефону? <a href="tel:+79031855846">+7 903 185-58-46</a></p>
-        <!-- TODO: Oksana WhatsApp shu raqamda ekanini tasdiqlasa, hidden'ni olib tashlang (shu sahifada 2 joyda) -->
-        <p class="order-call" hidden><a href="https://wa.me/79031855846">Написать в WhatsApp</a></p>
+        <p class="order-call"><a href="https://wa.me/79031855846" target="_blank" rel="noopener">Написать в WhatsApp</a></p>
       </div>
 
       <div class="order-card">
@@ -353,18 +357,17 @@
         <div>
           <dt>Телефон</dt>
           <dd><a href="tel:+79031855846">+7 903 185-58-46</a></dd>
-          <!-- TODO: WhatsApp, see the note above -->
-          <dd class="contact-extra" hidden><a href="https://wa.me/79031855846">WhatsApp</a></dd>
+          <dd class="contact-extra"><a href="https://wa.me/79031855846" target="_blank" rel="noopener">WhatsApp</a></dd>
         </div>
         <div>
           <dt>Почта</dt>
           <dd><a href="mailto:info@all-kid.ru">info@all-kid.ru</a></dd>
         </div>
         <div>
-          <dt>Производство и офис</dt>
-          <!-- TODO: the 2023 address from the web archive. Oksana has not confirmed it yet (brief, section 4a). -->
-          <dd class="contact-address">124460, Москва, Зеленоград, проспект Генерала Алексеева, 23с1</dd>
-          <dd class="contact-extra"><a href="https://yandex.ru/maps/?text=%D0%97%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%D0%B0%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B0%2C%2023%D1%811" target="_blank" rel="noopener">Открыть на Яндекс Картах</a></dd>
+          <dt>Адрес</dt>
+          <!-- Oksana, 2026-11-07: they moved about a year ago, the 2023 address is outdated. -->
+          <dd class="contact-address">Москва, Зеленоград, Георгиевский проспект, д.&nbsp;5, стр.&nbsp;2</dd>
+          <dd class="contact-extra"><a href="https://yandex.ru/maps/?text=%D0%97%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%2C%20%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%205%D1%812" target="_blank" rel="noopener">Открыть на Яндекс Картах</a></dd>
         </div>
       </dl>
     </div>
@@ -374,8 +377,7 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <p><strong>ALL-KIDS</strong>, швейное производство в Зеленограде</p>
-    <!-- TODO: full name and INN of the sole proprietor (asked on 2026-11-06 19:49) -->
-    <p>ИП Сидорова&nbsp;О.&nbsp;Ю., ИНН <span class="todo">уточняется</span></p>
+    <p>ИП Сидорова Оксана Юрьевна, ИНН&nbsp;504793526311</p>
     <ul class="footer-links">
       <li><a href="/all-kid-demo/privacy.html">Политика конфиденциальности</a></li>
       <li><a href="/all-kid-demo/consent.html">Согласие на обработку персональных данных</a></li>

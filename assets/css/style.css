@@ -101,6 +101,10 @@ a:hover { color: var(--ink); }
 .btn-line:hover { background: var(--ink); color: #fff; }
 .btn[disabled] { opacity: 0.7; cursor: progress; }
 
+/* ---------- temporary notice above the header (Oksana, 2026-11-07; remove when the full site is back) ---------- */
+.site-notice { background: var(--mist); border-bottom: 1px solid var(--grid-strong); }
+.site-notice p { padding-block: 0.55rem; font-size: 0.875rem; line-height: 1.4; }
+
 /* ---------- header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 20;
